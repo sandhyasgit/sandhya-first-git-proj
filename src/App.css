@@ -1,0 +1,186 @@
+/* Global Styles */
+.App {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  background: linear-gradient(135deg, #f06, #4a90e2);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: background 0.5s ease;
+}
+
+.App h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: slideIn 1s ease-out;
+}
+
+/* Keyframe Animation for Title */
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Todo List Container */
+.todo-list {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.todo-list:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Field */
+input {
+  padding: 12px;
+  margin-right: 10px;
+  width: 250px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 2px 10px rgba(74, 144, 226, 0.5);
+  transform: scale(1.05);
+}
+
+/* Add Button */
+button {
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background-color: #357abd;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-4px);
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Todo List */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  padding: 12px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transform: scale(1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+li span {
+  flex-grow: 1;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+li span:hover {
+  color: #4a90e2;
+  text-decoration: underline;
+  transform: scale(1.1);
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: #bbb;
+}
+
+li.completed {
+  background-color: #d4edda;  /* Light green for completed task */
+}
+
+/* Delete Button */
+li button {
+  background-color: #e74c3c;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  transition: all 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+li button:hover {
+  background-color: #c0392b;
+  transform: scale(1.1);
+}
+
+li button:active {
+  transform: scale(1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth Transition for the Todo List */
+ul li,
+button,
+input {
+  transition: all 0.3s ease;
+}
+
+/* Button Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+button.pulse {
+  animation: pulse 1.5s infinite ease-in-out;
+}
